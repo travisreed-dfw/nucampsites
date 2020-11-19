@@ -45,6 +45,10 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.mediaBackground {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .carousel {
   border: solid #5637dd;
 }
