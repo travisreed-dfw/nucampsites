@@ -28,7 +28,7 @@
 
     <title>NuCamp: A Better Way To Camp</title>
   </head>
-
+  <!-- BEGIN WEBSITE BODY -->
   <body>
     <header class="jumbotron jumbotron-fluid">
       <div class="container">
@@ -271,6 +271,7 @@
     <!-- END RESERVE MODAL -->
     <!-- BEGIN WEBSITE BODY -->
     <div class="container">
+      <!-- BEGIN CAROUSEL -->
       <div class="row row-content">
         <div class="col-md-8 mx-auto">
           <div id="homeCarousel" class="carousel slide" data-ride="carousel">
@@ -346,10 +347,19 @@
               <span class="carousel-control-next-icon"></span>
               <span class="sr-only">Next</span>
             </a>
+            <div class="btn-group" id="carouselButton">
+              <button class="btn btn-danger btn-sm" id="carouselPause">
+                <i class="fa fa-pause"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" id="carouselPlay">
+                <i class="fa fa-play"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
+      <!-- END CAROUSEL -->
+      <!-- BEGIN DISCOVER AND REVIEW -->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 order-sm-last col-md-3">
           <h2 class="text-sm-right">Discover & Review</h2>
@@ -371,7 +381,8 @@
           </div>
         </div>
       </div>
-
+      <!-- END DISCOVER AND REVIEW -->
+      <!-- BEGIN FEATURED CAMPSITES -->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 col-md-3">
           <h2>Featured Campsites</h2>
@@ -394,7 +405,8 @@
           </div>
         </div>
       </div>
-
+      <!-- END FEATURED CAMPSITES -->
+      <!-- BEGIN OUR COMMUNITY PARTNERS -->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 order-sm-last col-md-3">
           <h2 class="text-sm-right">Our Community Partners</h2>
@@ -416,6 +428,7 @@
           </div>
         </div>
       </div>
+      <!-- END OUR COMMUNITY PARTNERS -->
     </div>
     <!-- END WEBSITE BODY -->
     <!-- BEGIN FOOTER -->
@@ -472,10 +485,24 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+    <!-- TOOLTIP SCRIPT BELOW -->
+    <!-- <script>
       $(function () {
         $('[data-toggle="tooltip"]').tooltip();
       });
+    </script> -->
+    <script>
+      $(function () {
+        $('.carousel').carousel({ interval: 2000, pause: 'false' });
+        $('#carouselPause').click(function () {
+          $('.carousel').carousel('pause');
+        });
+        $('#carouselPlay').click(function () {
+          $('.carousel').carousel('cycle');
+        });
+      });
     </script>
   </body>
+
+  <!-- END WBESITE BODY -->
 </html>
